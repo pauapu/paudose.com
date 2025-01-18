@@ -1,0 +1,608 @@
+/* Global Styles */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    font-size: 62.5%; /* 1rem = 10px for easier scaling */
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+    background-color: #141414; /* Dark background */
+    color: white;
+    font-size: 1.6rem;
+}
+
+/* Header Styles */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem 5%;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Slight shadow for separation */
+}
+
+.logo-container{
+    display: flex;
+    align-items: center;
+    gap: 10px
+}
+
+.logo-img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.logo {
+    font-size: 3.5rem;
+    color: #e50914; /* Brand red */
+    font-weight: 800;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.1); /* Hover effect */
+}
+
+nav {
+    display: flex;
+    gap: 3rem;
+}
+
+nav a {
+    font-size: 1.8rem;
+    color: white;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    padding-bottom: 5px;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s ease;
+}
+
+nav a:hover {
+    color: #e50914; /* Red on hover */
+    border-bottom: 3px solid #e50914;
+}
+
+/* Home Section Styling */
+section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5rem 5%;
+    text-align: center;
+    background-color: #141414;
+    flex-direction: row;
+    gap: 5rem;
+    position: relative;
+}
+
+.home-img {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center the image */
+    position: relative;
+    max-width: 40%; /* Adjust the size of the image */
+    height: 300px; /* Ensure the height and width are equal for a circle */
+    overflow: hidden; /* Prevents image overflow */
+    border-radius: 50%; /* Circular shape */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4); /* Shadow for depth */
+}
+
+.home-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the circle without distortion */
+    transition: transform 0.3s ease-in-out;
+}
+
+.home-img img:hover {
+    transform: scale(1.05); /* Subtle zoom effect on hover */
+}
+
+.social-icons {
+    position: absolute;
+    bottom: 10px; /* Positioned at the bottom of the image */
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    z-index: 1; /* Ensure icons are above the image */
+}
+
+.social-icons a {
+    color: white;
+    font-size: 2.5rem;
+    transition: color 0.3s ease;
+}
+
+.social-icons a:hover {
+    color: #e50914; /* Red hover effect */
+}
+
+.home-content {
+    flex: 1;
+    max-width: 600px;
+    z-index: 1; /* Ensures text is above the overlay */
+}
+
+.home-content h1 {
+    font-size: 4rem;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: white;
+}
+
+.home-content h1 span {
+    color: #e50914; /* Highlight with red */
+}
+
+.typing-text {
+    font-size: 2.2rem;
+    font-weight: 400;
+    margin-bottom: 2rem;
+    color: #999;
+}
+
+.home-content p {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    color: #b0b0b0;
+}
+
+.btn {
+    padding: 1rem 3rem;
+    background-color: #e50914;
+    color: white;
+    font-size: 1.8rem;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    display: inline-block;
+    margin-top: 2rem;
+}
+
+.btn:hover {
+    background-color: #b81d1d; /* Darker red on hover */
+}
+
+/* About Me Section */
+.about {
+    padding: 5rem 5% 5rem 5%; /* Adjust padding to have more balance around content */
+    text-align: center; /* Center the text horizontally */
+    background-color: #1e1e1e; /* Background color */
+    display: flex; /* Use flexbox to align items vertically */
+    flex-direction: column; /* Stack children vertically */
+    justify-content: flex-start; /* Align content to the top */
+}
+
+/* Title Style */
+.about h2 {
+    font-size: 3rem;
+    margin-top: 0; /* No extra margin above the title */
+    margin-bottom: 1rem; /* Reduced space below the title */
+    color: #e50914;
+}
+
+/* Image Style */
+.about img {
+    max-width: 100%; /* Ensure the image is responsive */
+    height: auto; /* Maintain aspect ratio */
+    margin-top: 1rem; /* Reduced margin between the title and the image */
+    border-radius: 8px; /* Optional: adds rounded corners to the image */
+}
+
+/* Optional: Add a class for the content section if there’s additional text */
+.about-content {
+    margin-top: 1rem; /* Reduced space between title, image, and content */
+    color: #fff;
+    font-size: 1.6rem;
+    line-height: 1.8;
+    max-width: 800px; /* Limit the width to avoid large text lines */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Education Section */
+.education {
+    padding: 4rem 2rem;
+    background-color: #1e1e1e;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1.5rem;
+}
+
+.education h2 {
+    font-size: 3rem;
+    color: #e50914;
+    margin-top: 5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* Education Item */
+.education-item {
+    background-color: #333;
+    padding: 1.5rem;
+    margin-bottom: 1,5rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center; /* Align vertically */
+    justify-content: flex-start; /* Distribute space evenly between items */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+/* Hover effect */
+.education-item:hover {
+    background-color: #444;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+/* Education Logo */
+.education-logo {
+    flex: 0 0 80px; /* Fix logo size */
+    margin-right: 2rem;
+    display: flex;
+    justify-content: center; /* Center logo horizontally */
+    align-items: center; /* Center logo vertically */
+}
+
+.school-logo {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Education Details */
+.education-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Vertically center the content */
+}
+
+
+/* Title (h3) */
+.education-item h3 {
+    font-size: 2rem;
+    color: #e50914;
+    margin: 0; /* Remove any extra margins */
+    font-weight: 600;
+}
+
+/* Description (p) */
+.education-item p {
+    font-size: 1.4rem;
+    color: #b0b0b0;
+    margin-bottom: 0.5rem;
+}
+
+/* Duration Styling */
+.duration {
+    font-weight: 600;
+    color: #fff;
+}
+
+/* Course Styling */
+.course {
+    font-weight: 500;
+    color: #e50914;
+}
+
+
+/* Mobile responsiveness */
+@media screen and (max-width: 768px) {
+    .education-item {
+        flex-direction: column; /* Stack the logo and text vertically */
+        text-align: center;
+    }
+
+    .education-logo {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+
+    .education-item h3 {
+        font-size: 1.8rem; /* Slightly smaller text on smaller screens */
+    }
+
+    .education-item p {
+        font-size: 1.2rem; /* Slightly smaller text on smaller screens */
+    }
+}
+
+
+/* Skills Section */
+.skills {
+    padding: 5rem 5%;
+    background-color: #141414;
+    text-align: center;
+}
+
+.skills h2 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    color: #e50914;
+    text-align: center; /* Ensure the title is centered */
+}
+
+.skills-container {
+    display: grid; /* Use grid layout for the skills */
+    grid-template-columns: repeat(2, 1fr); /* Create 2 equal columns */
+    gap: 2rem; /* Space between items */
+    width: 100%; /* Full width of the container */
+    max-width: 1200px; /* Optional: Limit the max width of the container */
+    margin: 0 auto; /* Center the grid container horizontally */
+}
+
+.skill {
+    background-color: #333;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.skill:hover {
+    background-color: #444; /* Slightly lighter shade on hover */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2); /* Deeper shadow on hover */
+}
+
+.skill h3 {
+    font-size: 2rem;
+    color: #e50914;
+    margin-bottom: 0.5rem;
+}
+
+.skill p {
+    font-size: 1.6rem;
+    color: #b0b0b0;
+}
+
+/* Optional: Responsive design for smaller screens */
+@media (max-width: 900px) {
+    .skills-container {
+        grid-template-columns: repeat(1, 1fr); /* Stack skills vertically on smaller screens */
+    }
+}
+
+/* Projects Section */
+.projects {
+    padding: 70px;
+    background-color: #1e1e1e;
+    text-align: center;
+}
+
+.projects h2 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    color: #e50914;
+    text-align: center; /* Centers the text horizontally */
+    position: absolute; /* Positions the title absolutely */
+    top: 100px; /* Adjust this value to push the h2 down (e.g., 1.5rem * 2 for header height) */
+    left: 50%; /* Aligns it to the horizontal center */
+    transform: translateX(-50%); /* Adjusts the positioning to make sure it's perfectly centered */
+    width: 100%; /* Ensures it's taking up the full width */
+    z-index: 1; /* Keeps the title above other content */
+}
+
+
+
+/* Projects Section */
+.projects {
+    padding: 5rem 5%;
+    background-color: #1e1e1e;
+    text-align: center;
+}
+
+.projects h2 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    color: #e50914;
+    text-align: center; /* Centers the title horizontally */
+}
+
+/* Projects Container */
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Makes items responsive */
+    gap: 2rem; /* Adds spacing between items */
+    justify-items: center; /* Centers content in each grid cell */
+    align-items: stretch; /* Aligns items to stretch to the full height of the grid cell */
+    margin-top: 100px;
+}
+
+/* Project Item */
+.project-item {
+    background-color: #333;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%; /* Makes sure the items stretch to full width of the grid cell */
+    height: 100%; /* Ensures that the item takes up the full height of the grid cell */
+    transition: all 0.3s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column; /* Aligns content vertically */
+    justify-content: space-between; /* Space out content (like title, image, description) */
+}
+
+/* Hover effect on project item */
+.project-item:hover {
+    background-color: #444;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+/* Project Image */
+.project-img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+/* Hover effect on project image */
+.project-item:hover .project-img {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+/* Project Title (h3) */
+.project-item h3 {
+    font-size: 2rem;
+    color: #e50914;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    text-align: center; /* Centers the title text */
+}
+
+/* Project Description */
+.project-item p {
+    font-size: 1.6rem;
+    color: #b0b0b0;
+    text-align: center; /* Ensures the description is centered */
+}
+
+
+
+/* Mobile responsiveness */
+@media screen and (max-width: 768px) {
+    .projects-container {
+        grid-template-columns: 1fr; /* Stacks items in one column for small screens */
+    }
+
+    .project-item {
+        padding: 1.5rem;
+    }
+
+    .project-item h3 {
+        font-size: 1.8rem;
+    }
+
+    .project-item p {
+        font-size: 1.4rem;
+    }
+}
+
+/* Contact Section */
+.contact {
+    padding: 5rem 5%;
+    background-color: #141414;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact h2 {
+    margin-bottom: 3rem;
+    font-size: 3rem;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.contact form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #333;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.contact form .input-box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact form .input-box input,
+.contact form textarea {
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 1.6rem;
+    background-color: #222;
+    color: white;
+    border: 2px solid #e50914;
+    border-radius: 8px;
+    margin: 0;
+    transition: all 0.3s ease;
+}
+
+.contact form .input-box input:focus,
+.contact form textarea:focus {
+    border-color: #b81d1d;
+    outline: none;
+}
+
+.contact form .input-box input::placeholder,
+.contact form textarea::placeholder {
+    color: #777;
+}
+
+.contact form .btn {
+    background-color: #e50914;
+    color: white;
+    font-size: 1.8rem;
+    font-weight: 600;
+    padding: 1.5rem 3rem;
+    border-radius: 5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s ease;
+}
+
+.contact form .btn:hover {
+    background-color: #b81d1d; /* Darker red on hover */
+}
+
+.contact form .btn:active {
+    transform: scale(0.98); /* Slight button press effect */
+}
